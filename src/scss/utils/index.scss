@@ -1,7 +1,32 @@
-@import "reboot";
-@import "display";
+@import "reset";
 @import "fonts";
-@import "spacing";
-@import "colors";
-@import "position";
-@import "animations";
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  font-family: $fontFamily;
+  font-weight: 500;
+  line-height: 1.15;
+  color: $mainColor;
+  font-size: $fontSize;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

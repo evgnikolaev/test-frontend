@@ -8,3 +8,8 @@ $base-value: 16 !default;
   $remSize: $size / $base-value;
   @return #{$remSize}rem;
 }
+
+@function em($size,$parentSize){
+  $emSize:$size/$parentSize;
+  @return #{$emSize}rem;
+}

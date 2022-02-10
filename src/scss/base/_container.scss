@@ -1,3 +1,13 @@
-.container {
-  @include base-container();
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+._container {
+  max-width: $containerWidth + px;
+  margin: 0 auto;
+  padding: 0 $containerPadding + px;
 }

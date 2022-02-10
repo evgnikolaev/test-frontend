@@ -1,6 +1,22 @@
-@import "typography";
-@import "animations";
-@import "spacing";
-@import "grid";
-@import "colors";
-@import "icons";
+$mainColor: #000;
+$mainDarkColor: #141414;
+$mainOrange: #E8AA31;
+
+
+$fontFamily: 'Montserrat';
+
+
+$minWidth: 320;
+$maxWidth: 1920;
+$containerPadding: 15;
+$containerWidth: 1590;
+
+
+$pc:$containerWidth;
+$tablet:991.98;
+$mobile:767.98;
+$mobileSmall:479.98;
+
+
+
+
