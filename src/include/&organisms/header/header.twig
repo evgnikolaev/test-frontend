@@ -1,18 +1,28 @@
 <header class="header">
     <div class="header__top top-header">
         <div class="top-header__container _container">
-            <div class="top-header__menu menu">
-                <div class="menu__body">
-                    <ul class="menu__list">
-                        {% for item in header.top_header.menu %}
-                            <li class="menu__item"><a class="menu__link" href="{{ item.link }}">{{ item.text }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
+            <div class="top-header__menu menu-top-header">
+                <ul data-da=".menu__body,991.98" class="menu-top-header__list">
+                    <li class="menu-top-header__item menu-top-header__item_catalog">
+                        <a class="menu-top-header__link menu-top-header__link_catalog"
+                           href="#"><span class="_icon-arrow-bottom"></span><span>Каталог товаров</span></a>
+                    </li>
+                    {% for item in header.top_header.menu %}
+                        <li class="menu-top-header__item">
+                            <a class="menu-top-header__link"
+                               href="{{ item.link }}">{{ item.text }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
-            <a class="top-header__user" href="{{ header.top_header.user.link }}">
-                <span class="_icon-lk"></span><span class="top-header__user-txt">{{ header.top_header.user.text }}</span></a>
-            {% view '^icon-menu' %}
+            <a class="top-header__user" href="{{ header.top_header.user.link }}"> <span class="_icon-lk"></span>
+                <span class="top-header__user-txt">{{ header.top_header.user.text }}</span></a>
+
+            <nav hidden class="menu">
+                {% view '^icon-menu' %}
+                <div class="menu__body"></div>
+            </nav>
+
         </div>
     </div>
     <div class="header__body body-header">
@@ -31,12 +41,16 @@
                 <div class="actions-header__phones phones-header">
                     <div class="phones-header__items" data-spolers>
                         <div class="phones-header__item">
-                            <a href="{{ header.body_header.phones.items|first.link }}" class="phones-header__phone">{{ header.body_header.phones.items|first.text }}</a>
+                            <a href="{{ header.body_header.phones.items|first.link }}"
+                               class="phones-header__phone">
+                                {{ header.body_header.phones.items|first.text }}</a>
                             <button class="phones-header__arrow _icon-arrow-bottom" data-spoler></button>
                             <ul class="phones-header__list" data-spoler-list>
                                 {% for item in header.body_header.phones.items %}
                                     {% if loop.first != true %}
-                                        <li><a class="phones-header__phone" href="{{ item.link }}">{{ item.text }}</a>
+                                        <li>
+                                            <a class="phones-header__phone"
+                                               href="{{ item.link }}">{{ item.text }}</a>
                                         </li>
                                     {% endif %}
                                 {% endfor %}
@@ -48,241 +62,128 @@
                     </button>
                 </div>
 
-                <a class="actions-header__favorite _icon-favorite"
+                <a data-da=".top-header__container,991.98,first" class="actions-header__favorite _icon-favorite"
                    href="{{ header.body_header.favorite.link }}">
                     {{ header.body_header.favorite.text }}</a>
 
-                <div class="actions-header__cart cart-header">
+                <div data-da=".top-header__container,991.98,2" class="actions-header__cart cart-header">
                     <div class="cart-header__icon">
                         <span class="_icon-cart"></span><span class="cart-header__quantity">0</span>
                     </div>
-                    <div class="cart-header__body">
+                    <a class="cart-header__body" href="{{ header.body_header.cart.link }}">
                         <div class="cart-header__summ">0 p.</div>
-                        <a class="cart-header__link"
-                           href="{{ header.body_header.cart.link }}">
-                            {{ header.body_header.cart.text }}</a>
-                    </div>
+                        <div class="cart-header__link">
+                            {{ header.body_header.cart.text }}
+                        </div>
+                    </a>
                 </div>
 
             </div>
         </div>
     </div>
 
+
     <div class="header__catalog catalog-header">
         <div class="catalog-header__container _container">
             <nav class="catalog-header__menu menu-catalog">
+                <button class="menu-catalog__back"><span class="_icon-arrow-bottom"></span><span>Назад</span></button>
                 <ul class="menu-catalog__list">
-                    <li class="menu-catalog__item">
-                        <a class="menu-catalog__link" href="#" data-parent="1">Каталог ножей</a>
-                    </li>
-                    <li class="menu-catalog__item">
-                        <a class="menu-catalog__link" href="#" data-parent="2">Клинковое оружие</a>
-                    </li>
-                    <li class="menu-catalog__item">
-                        <a class="menu-catalog__link" href="#">Сувенирные изделия</a>
-                    </li>
-                    <li class="menu-catalog__item">
-                        <a class="menu-catalog__link" href="#">Фонари ARMYTEK</a>
-                    </li>
-                    <li class="menu-catalog__item">
-                        <a class="menu-catalog__link" href="#">Сопутствующие товары</a>
-                    </li>
+                    {% for item in  header.menu.items %}
+                        <li class="menu-catalog__item">
+                            <a class="menu-catalog__link"
+                               href="{{ item.link }}"
+                                    {% if item.data %}{{ item.data }}{% endif %}>
+                                {{ item.text }}</a>
+                        </li>
+                    {% endfor %}
                 </ul>
 
                 <div class="menu-catalog__sub-menu sub-menu-catalog">
                     <div class="sub-menu-catalog__container _container">
+
                         <div class="sub-menu-catalog__block" data-submenu="1">
-                            <div class="sub-menu-catalog__column">
-                                <a class="sub-menu-catalog__category" href="#">Категория ножей</a>
-                                <ul class="sub-menu-catalog__list">
+
+                            {% for item in header.submenu_1.category %}
+                                <div class="sub-menu-catalog__category">
+                                    <a class="sub-menu-catalog__link-category" href="">{{ item }}</a>
+                                </div>
+                            {% endfor %}
+
+                            <ul class="sub-menu-catalog__list">
+                                {% for item in header.submenu_1.list_1 %}
                                     <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Разделочные ножи</a>
+                                        <a class="sub-menu-catalog__link" href="">{{ item }}</a>
                                     </li>
+                                {% endfor %}
+                            </ul>
+
+                            <ul class="sub-menu-catalog__list">
+                                {% for item in header.submenu_1.list_2 %}
                                     <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Туристические ножи</a>
+                                        <a class="sub-menu-catalog__link" href="">{{ item }}</a>
                                     </li>
+                                {% endfor %}
+                            </ul>
+
+                            <ul class="sub-menu-catalog__list">
+                                {% for item in header.submenu_1.list_3 %}
                                     <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи охотничьи</a>
+                                        <a class="sub-menu-catalog__link" href="">{{ item }}</a>
                                     </li>
+                                {% endfor %}
+                            </ul>
+
+                            <ul class="sub-menu-catalog__list">
+                                {% for item in header.submenu_1.list_4 %}
                                     <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Булатные ножи</a>
+                                        <a class="sub-menu-catalog__link" href="">{{ item }}</a>
                                     </li>
+                                {% endfor %}
+                            </ul>
+
+                            <ul class="sub-menu-catalog__list">
+                                {% for item in header.submenu_1.list_5 %}
                                     <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи из дамаска</a>
+                                        <a class="sub-menu-catalog__link" href="">{{ item }}</a>
                                     </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Тактического назначения</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Метательные ножи</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Мачете и кукри</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи кухонные</a>
-                                    </li>
-                                </ul>
-                                <a class="sub-menu-catalog__all" href="#">Смотреть все</a>
-                            </div>
-                            <div class="sub-menu-catalog__column">
-                                <a class="sub-menu-catalog__category" href="#">Производство ножей</a>
-                                <ul class="sub-menu-catalog__list">
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи ЗИК</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи ЗЗОСС</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи РОСоружие</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи Оружейник</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Булат Сергея Баранова</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Булат Андрея Умерова</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи Златко</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи Стиль-М</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Оружейная компания</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи ЗИК</a>
-                                    </li>
-                                </ul>
-                                <a class="sub-menu-catalog__all" href="#">Смотреть все</a>
-                            </div>
-                            <div class="sub-menu-catalog__column">
-                                <a class="sub-menu-catalog__category" href="#">Ножи по маркам стали</a>
-                                <ul class="sub-menu-catalog__list">
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи из стали 40х102С2М</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи из стали 95х18</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи из стали 100х13м</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи из стали 110х18м-ШД</a>
-                                    </li>
-                                </ul>
-                                <a class="sub-menu-catalog__all" href="#">Смотреть все</a>
-                            </div>
-                            <div class="sub-menu-catalog__column">
-                                <a class="sub-menu-catalog__category" href="#">Заточка и полировка ножей</a>
-                                <ul class="sub-menu-catalog__list">
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Паста ГОИ</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Алмазная паста</a>
-                                    </li>
-                                </ul>
-                                <a class="sub-menu-catalog__all" href="#">Смотреть все</a>
-                            </div>
-                            <div class="sub-menu-catalog__column">
-                                <a class="sub-menu-catalog__category" href="#">Ножевая мастерская</a>
-                                <ul class="sub-menu-catalog__list">
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножевые клинки</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Заготовки для ножей</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Литье для ножей</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Материалы для рукоятей</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Уход за рукоятиями ножей</a>
-                                    </li>
-                                </ul>
-                                <a class="sub-menu-catalog__all" href="#">Смотреть все</a>
-                            </div>
+                                {% endfor %}
+                            </ul>
+
+                            {% for item in header.submenu_1.all %}
+                                <div class="sub-menu-catalog__footer">
+                                    <a class="sub-menu-catalog__all" href="">{{ item }}</a>
+                                </div>
+                            {% endfor %}
                         </div>
+
                         <div class="sub-menu-catalog__block" data-submenu="2">
-                            <div class="sub-menu-catalog__column">
-                                <a class="sub-menu-catalog__category" href="#">Категория ножей2</a>
-                                <ul class="sub-menu-catalog__list">
+                            {% for item in header.submenu_2.category %}
+                                <div class="sub-menu-catalog__category">
+                                    <a class="sub-menu-catalog__link-category" href="">{{ item }}</a>
+                                </div>
+                            {% endfor %}
+
+                            <ul class="sub-menu-catalog__list">
+                                {% for item in header.submenu_2.list_1 %}
                                     <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Разделочные ножи2</a>
+                                        <a class="sub-menu-catalog__link" href="">{{ item }}</a>
                                     </li>
+                                {% endfor %}
+                            </ul>
+
+                            <ul class="sub-menu-catalog__list">
+                                {% for item in header.submenu_2.list_2 %}
                                     <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Туристические ножи2</a>
+                                        <a class="sub-menu-catalog__link" href="">{{ item }}</a>
                                     </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи охотничьи2</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Булатные ножи2</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи из дамаска2</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Тактического назначения2</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Метательные ножи2</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Мачете и кукри2</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи кухонные2</a>
-                                    </li>
-                                </ul>
-                                <a class="sub-menu-catalog__all" href="#">Смотреть все</a>
-                            </div>
-                            <div class="sub-menu-catalog__column">
-                                <a class="sub-menu-catalog__category" href="#">Производство ножей3</a>
-                                <ul class="sub-menu-catalog__list">
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи ЗИК3</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи ЗЗОСС3</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи РОСоружие3</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи Оружейник</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Булат Сергея Баранова</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Булат Андрея Умерова</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи Златко</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи Стиль-М</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Оружейная компания</a>
-                                    </li>
-                                    <li class="sub-menu-catalog__item">
-                                        <a class="sub-menu-catalog__link" href="">Ножи ЗИК</a>
-                                    </li>
-                                </ul>
-                                <a class="sub-menu-catalog__all" href="#">Смотреть все</a>
-                            </div>
+                                {% endfor %}
+                            </ul>
+
+                            {% for item in header.submenu_2.all %}
+                                <div class="sub-menu-catalog__footer">
+                                    <a class="sub-menu-catalog__all" href="">{{ item }}</a>
+                                </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -291,6 +192,6 @@
     </div>
 </header>
 
-350 минут!!!!!!
+522 минут!!!!!!
 
 

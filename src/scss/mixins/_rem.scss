@@ -9,7 +9,7 @@ $base-value: 16 !default;
   @return #{$remSize}rem;
 }
 
-@function em($size,$parentSize){
-  $emSize:$size/$parentSize;
-  @return #{$emSize}rem;
+@function em($size,$parentSize:$base-value) {
+  $emSize: $size/$parentSize;
+  @return #{$emSize}em;
 }
