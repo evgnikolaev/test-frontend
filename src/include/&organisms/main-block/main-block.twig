@@ -1,0 +1,69 @@
+<div class="main-block">
+    <div class="main-block__container _container">
+        <div class="main-block__body">
+
+            <div class="main-block__slider">
+                <div class="main-block__swiper swiper">
+                    <div class="swiper-wrapper">
+                        {% for item in slider.items %}
+                            <div class="swiper-slide">
+                                <div class="main-block__slide slide-main-block">
+                                    <div class="slide-main-block__content">
+                                        <h2 class="slide-main-block__title">
+                                            {{ item.title }}
+                                        </h2>
+                                        <div class="slide-main-block__subtitle">
+                                            {{ item.subtitle }}
+                                        </div>
+                                        <div class="slide-main-block__text">
+                                            {{ item.text }}
+                                        </div>
+                                    </div>
+                                    <a class="slide-main-block__button button" href="#"> {{ item.btn }}</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="main-block__controll controll-main-block">
+                    <div class="controll-main-block__bullets slider-dotts"></div>
+                    <div class="controll-main-block__fraction fraction-controll">
+                        <span class="fraction-controll__current">0</span> /
+                        <span class="fraction-controll__all">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-block__media media-main-block">
+                <div class="media-main-block__body">
+                    <div class="media-main-block__image">
+                        <img src="/img/main-block/mainslide.png" alt="">
+                    </div>
+                    <div class="media-main-block__tips">
+                        <div class="media-main-block__tip media-main-block__tip_1">
+                            <span>+</span></div>
+                        <div class="media-main-block__tip media-main-block__tip_2">
+                            <span>+</span></div>
+                        <div class="media-main-block__tip media-main-block__tip_3">
+                            <span>+</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-block__advantages advantages-main">
+            <div class="advantages-main__items">
+                {% for item in advantages %}
+                    <div class="advantages-main__item">
+                        <div class="advantages-main__icon">
+                            {% svg "main-block/"~loop.index %}
+                        </div>
+                        <div class="advantages-main__text">
+                            {{ item.text }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

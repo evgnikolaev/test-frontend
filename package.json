@@ -12,9 +12,11 @@
 		"countup.js": "^2.0.7",
 		"es7-object-polyfill": "^1.0.1",
 		"intersection-observer": "^0.7.0",
+		"nouislider": "^15.5.1",
 		"promise-polyfill": "^8.2.0",
 		"sal.js": "^0.6.6",
 		"smoothscroll-polyfill": "^0.4.4",
+		"swiper": "^8.0.6",
 		"vanilla-lazyload": "^15.1.1"
 	},
 	"devDependencies": {

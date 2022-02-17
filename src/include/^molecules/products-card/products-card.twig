@@ -1,0 +1,20 @@
+<div class="products-card">
+    <a class="products-card__image">
+        <span class="products-card__item-image-ibg"><img src="{{ card.img }}" alt="Картинка"></span></a>
+    <div class="products-card__body">
+        <h4 class="products-card__title">
+            <a class="products-card__title-link" href="#">{{ card.title }}</a>
+        </h4>
+        <div class="products-card__info info-product-card">
+            <div class="info-product-card__size">{{ card.size }}</div>
+            <div class="info-product-card__materials">{{ card.materials }}</div>
+        </div>
+        <div class="products-card__rating-info">{{ card.reviews }}</div>
+        <div class="products-card__footer">
+            <div class="products-card__price">{{ card.price }}</div>
+            <a class="products-card__compare"><span class="_icon-compare"></span></a>
+            <a class="products-card__favorite"><span class="_icon-favorite"></span></a>
+        </div>
+        <button class="products-card__cart button"><span class="_icon-cart"></span>{{ card.cart }}</button>
+    </div>
+</div>

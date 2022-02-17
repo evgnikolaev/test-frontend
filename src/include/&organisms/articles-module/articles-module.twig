@@ -1,0 +1,18 @@
+<div class="articles-module">
+    <div class="articles-module__container _container">
+        <div class="articles-module__title">Наши статьи</div>
+        <div class="articles-module__items">
+            {% for i in 1..4 %}
+                <div class="articles-module__item item-article">
+                    <a class="item-article__image_ibg" href="#"><img src="/img/articles-module/{{ i }}.jpg" alt=""> </a>
+                    <div class="item-article__body">
+                        <h4 class="item-article__title">
+                            <a href="" class="item-article__link-title">Все о ножах: как правильно выбрать</a>
+                        </h4>
+                        <div class="item-article__date">24.07.2019</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

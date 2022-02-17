@@ -1,0 +1,22 @@
+<div class="product-block">
+    <div class="product-block__container _container">
+        {% for i in 1..2 %}
+            <div class="product-block__item item-product-block">
+                <div class="item-product-block__body">
+                    <h3 class="item-product-block__title">
+                        <a class="item-product-block__link-title" href="#">Тактические фонари</a>
+                    </h3>
+                    <div class="item-product-block__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </div>
+                    <button class="item-product-block__button button">
+                        Подробнее
+                    </button>
+                </div>
+                <div class="item-product-block__image">
+                    <img src="/img/product-block/{{ i }}.png" alt="">
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

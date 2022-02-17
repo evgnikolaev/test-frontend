@@ -13,3 +13,8 @@ $base-value: 16 !default;
   $emSize: $size/$parentSize;
   @return #{$emSize}em;
 }
+
+@function percent($val1,$val2) {
+  $size: ($val1/$val2)*100%;
+  @return #{$size};
+}

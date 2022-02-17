@@ -1,0 +1,7 @@
+[data-spoler-list] {
+  display: none;
+
+  &._active {
+    display: block;
+  }
+}

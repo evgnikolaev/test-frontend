@@ -2,8 +2,8 @@
 <html lang="ru" class="animate-disabled">
 <head>
     <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ title }}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,17 +17,17 @@
 <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
 
 
+<div class="wrapper">
+    {% view "&header" %}
 
-{% view "&header" %}
+    {% block content %}{% endblock %}
 
-{% block content %}{% endblock %}
+    {% view '&footer' %}
 
-{% view '&footer' %}
-
-{% if block('endPage') is defined %}
-    {{ block('endPage') }}
-{% endif %}
-
+    {% if block('endPage') is defined %}
+        {{ block('endPage') }}
+    {% endif %}
+</div>
 
 
 <script type="text/javascript" src="js/vendors~index.chunk.js?{{ date().getTime() }}" defer></script>

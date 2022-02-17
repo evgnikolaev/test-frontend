@@ -1,0 +1,26 @@
+<div class="products-slider">
+    <div class="products-slider__container _container">
+        <div class="products-slider__header">
+            <h2 class="products-slider__title">{{ header.title }}</h2>
+            <a class="products-slider__more"> <span class="_icon-arrow-bottom"></span>
+                <span class="products-slider__more-title">{{ header.link }}</span></a>
+        </div>
+        <div class="products-slider__slider">
+            <div class="products-slider__swiper swiper">
+                <div class="swiper-wrapper">
+                    {% for item in hits_slider.slides %}
+                        <div class="swiper-slide">
+                            <div class="products-slider__slide">
+                                {% view "^products-card" with {
+                                    card: item
+                                } %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="products-slider__bullets slider-dotts">
+            </div>
+        </div>
+    </div>
+</div>

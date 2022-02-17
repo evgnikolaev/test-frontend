@@ -1,1 +1,111 @@
-<footer class="footer"></footer>
+<footer class="footer">
+    <section class="footer__text text-footer">
+        <div class="text-footer__container _container">
+            <h1 class="text-footer__title">{{ text_footer.title }}</h1>
+            <div class="text-footer__text">{{ text_footer.text }}</div>
+        </div>
+    </section>
+    <div class="footer__container _container">
+        <div class="footer__body body-footer">
+            <div class="body-footer__row">
+                {% for item in body_footer.items %}
+                    <div class="body-footer__item item-footer">
+                        <div class="item-footer__title">{{ item.title }}</div>
+                        <div class="menu-footer">
+                            <ul class="menu-footer__list">
+                                {% for menu in item.menu %}
+                                    <li class="menu-footer__item">
+                                        <a class="menu-footer__link" href="">{{ menu }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="body-footer__row">
+                <div class="body-footer__item item-footer">
+                    <div class="item-footer__title">КОНТАКТЫ</div>
+                    <div class="menu-footer">
+                        <ul class="menu-footer__list">
+                            <li class="menu-footer__item">
+                                <a class="menu-footer__link" href="">
+                                    <span class="_icon-footer-phone _footer-icon"></span>
+                                    <span class="menu-footer__link-text">8 (800) 777-49-67</span></a>
+                            </li>
+                            <li class="menu-footer__item">
+                                <a class="menu-footer__link" href="">
+                                    <span class="_icon-footer-clock _footer-icon"></span>
+                                    <span class="menu-footer__link-text">Пн-Пт 7:00 - 16:00 (МСК)</span> </a>
+                            </li>
+                            <li class="menu-footer__item">
+                                <a class="menu-footer__link" href="">
+                                    <span class="_icon-footer-location _footer-icon"></span>
+                                    <span class="menu-footer__link-text">Златоуст, ул. Шоссейная, д. 1, офис «6Б»</span>
+                                </a>
+                            </li>
+                            <li class="menu-footer__item">
+                                <a class="menu-footer__link" href="">
+                                    <span class="_icon-footer-mail _footer-icon"></span>
+                                    <span class="menu-footer__link-text">info@zlatmax.ru</span> </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="social-footer">
+                        <li class="social-footer__item">
+                            <a href="#" class="social-footer__link"> <img src="/img/footer/fb.png" alt=""> </a>
+                        </li>
+                        <li class="social-footer__item">
+                            <a href="#" class="social-footer__link"> <img src="/img/footer/vb.png" alt=""> </a>
+                        </li>
+                        <li class="social-footer__item">
+                            <a href="#" class="social-footer__link"> <img src="/img/footer/tg.png" alt=""> </a>
+                        </li>
+                        <li class="social-footer__item">
+                            <a href="#" class="social-footer__link"> <img src="/img/footer/wp.png" alt=""> </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body-footer__item item-footer">
+                    <div class="item-footer__title">Полезные ссылки</div>
+                    <div class="menu-footer">
+                        <ul class="menu-footer__list">
+                            <li class="menu-footer__item">
+                                <a class="menu-footer__link" href="">Способы оплаты и доставки</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="body-footer__item item-footer">
+                    <div class="item-footer__title">НАША ГАРАНТИЯ</div>
+                    <div class="item-footer__text">
+                        Недовольны своей покупкой? Вы можете вернуть ее в течении 30 дней с даты получения, согласно
+                        <a href="">нашим правилам</a>
+                    </div>
+                </div>
+                <div class="body-footer__item item-footer">
+                    <div class="item-footer__title">НОВОСТНАЯ РАССЫЛКА</div>
+                    <form class="footer-subscribe" action="#">
+                        <div class="footer-subscribe__label">Подпишитесь прямо сейчас!</div>
+                        <div class="footer-subscribe__line">
+                            <input class="footer-subscribe__input" type="text">
+                            <button class="footer-subscribe__button">
+                                <span class="_icon-arrow-bottom"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="body-footer__bottom">
+                <div class="body-footer__rules">
+                    Все материалы, размещенные на сайте, носят справочный характер и не являются публичной офертой, определяемойположениями Статьи 437 Гражданского кодекса Российской Федерации. При копировании материалов гиперссылка на www.zlatmax.ru обязательна!
+                </div>
+                <div class="body-footer__copy">
+                    Златоустовские ножи www.zlatmax.ru ©
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+

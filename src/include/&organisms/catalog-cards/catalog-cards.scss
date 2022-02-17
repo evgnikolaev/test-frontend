@@ -1,0 +1,129 @@
+.catalog-cards {
+  padding: rem(100) 0 rem(70) 0;
+
+  // .catalog-cards__container
+
+  &__container {
+    display: grid;
+    gap: rem(30);
+    @media (min-width: $mobileSmall +px) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(400), 1fr));
+    }
+  }
+
+  // .catalog-cards__item
+
+  &__item {
+  }
+}
+
+
+.item-catalog-cards {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  min-height: rem(290);
+  overflow: hidden;
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+  }
+  // .item-catalog-cards__body
+
+  &__body {
+    padding: rem(30);
+    position: relative;
+    z-index: 2;
+  }
+
+  // .item-catalog-cards__title
+
+  &__title {
+
+  }
+
+  // .item-catalog-cards__link-title
+
+  &__link-title {
+    font-weight: 600;
+    font-size: rem(24);
+    line-height: 34px/24px;
+    display: inline-block;
+    margin: 0 0 em(30, 24) 0;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: rem(2);
+      margin: rem(15) 0 0 0;
+      background-color: $mainOrange;
+      transition: width 0.3s ease 0s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // .item-catalog-cards__list
+
+  &__list {
+
+  }
+
+  // .item-catalog-cards__item
+
+  &__item {
+    position: relative;
+    padding: 0 0 0 rem(20);
+
+    &:before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background-color: $mainOrange;
+      border-radius: 50%;
+      position: absolute;
+      top: em(15, 18);
+      left: 0;
+    }
+  }
+
+  // .item-catalog-cards__link
+
+  &__link {
+    font-weight: 500;
+    font-size: rem(18);
+    line-height: (34/18);
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // .item-catalog-cards__image
+
+  &__image {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    @media (min-width: $mobileSmall+px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

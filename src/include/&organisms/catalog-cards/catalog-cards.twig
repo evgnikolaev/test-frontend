@@ -1,0 +1,27 @@
+<div class="catalog-cards">
+    <div class="catalog-cards__container _container">
+        {% for i in 1..6 %}
+            <div class="catalog-cards__item item-catalog-cards">
+                <div class="item-catalog-cards__body">
+                    <h3 class="item-catalog-cards__title">
+                        <a class="item-catalog-cards__link-title" href="#">Каталог ножей</a>
+                    </h3>
+                    <ul class="item-catalog-cards__list">
+                        <li class="item-catalog-cards__item">
+                            <a class="item-catalog-cards__link" href="#">Разделочные</a>
+                        </li>
+                        <li class="item-catalog-cards__item">
+                            <a class="item-catalog-cards__link" href="#">Туристические</a>
+                        </li>
+                        <li class="item-catalog-cards__item">
+                            <a class="item-catalog-cards__link" href="#">Охотничьи</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item-catalog-cards__image">
+                    <img src="/img/catalog-cards/{{ i }}.png" alt="">
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

@@ -2,5 +2,29 @@
 
 {% block content %}
 
+    <div class="page page_home">
+        <div class="page__mainslider">
+            {% view "&main-block" %}
+        </div>
+        <section class="page__catalog-cards">
+            {% view "&catalog-cards" %}
+        </section>
+        <section class="page__products-slider">
+            {% view "&products-slider" with {
+                header: hits_slider.header
+            } %}
+        </section>
+        <section class="page__new-products">
+            {% view "&products-new" with {
+                header: hits_slider.header
+            } %}
+        </section>
+        <section class="page__articles-module">
+            {% view "&articles-module" %}
+        </section>
+        <section class="page__product-block">
+            {% view "&product-block" %}
+        </section>
+    </div>
 
 {% endblock %}

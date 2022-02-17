@@ -1,0 +1,148 @@
+{% extends "layouts::_page.twig" %}
+
+{% block content %}
+
+    <div class="page page_inner">
+
+        <div class="page__header">
+            <div class="page__container _container">
+                <div class="page__breadcrumbs breadcrumbs">
+                    <ul class="breadcrumbs__list">
+                        <li class="breadcrumbs__item">
+                            <a class="breadcrumbs__link" href="#">Главная</a>
+                        </li>
+                        <li class="breadcrumbs__item">
+                            <a class="breadcrumbs__link" href="#">Разделочные ножи</a>
+                        </li>
+                        <li class="breadcrumbs__item">
+                            <span class="breadcrumbs__current">Нож Снегирь</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product">
+            <div class="product__container _container">
+                <div class="product__main main-product">
+
+                    <div class="main-product__images images-product">
+
+                        <div class="images-product__slider">
+                            <div class="images-product__swiper swiper">
+                                <div class="swiper-wrapper">
+                                    {% for i in 1..4 %}
+                                        <div class="swiper-slide">
+                                            <div class="images-product__slide-ibg">
+                                                <img src="/img/product/{{ i }}.jpg" alt="">
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="images-product__thumbs thumbs-images">
+                            <div class="thumbs-images__swiper swiper">
+                                <div class="swiper-wrapper">
+                                    {% for i in 1..4 %}
+                                        <div class="swiper-slide">
+                                            <div class="thumbs-images__slide-ibg">
+                                                <img src="/img/product/{{ i }}.jpg" alt="">
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="main-product__body">
+                        <div class="body-product">
+                            <div class="body-product__header header-product">
+                                <div class="header-product__title">Нож Снегирь</div>
+                                <a class="header-product__link"><span class="_icon-compare"></span></a>
+                                <a class="header-product__link"><span class="_icon-favorite"></span></a>
+                            </div>
+                            <div class="body-product__table table-product">
+                                <div class="table-product__item">
+                                    <div class="table-product__label">Артикул:</div>
+                                    <div class="table-product__value">AF0000001952</div>
+                                </div>
+                                <div class="table-product__item">
+                                    <div class="table-product__label">Торговая марка:</div>
+                                    <div class="table-product__value">WUESTHOF (Германия)</div>
+                                </div>
+                                <div class="table-product__item">
+                                    <div class="table-product__label">Серия:</div>
+                                    <div class="table-product__value">Ножи серии Classic Ikon</div>
+                                </div>
+                            </div>
+                            <div class="body-product__options options-product">
+                                <div class="options-product__item">
+                                    <div class="options-product__label">Сталь</div>
+                                    <div class="options-product__value">
+                                        <select>
+                                            <option value="1">выбрать сталь</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="options-product__item">
+                                    <div class="options-product__label">Рукоять</div>
+                                    <div class="options-product__value">
+                                        <select>
+                                            <option value="1">выбрать рукоять</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="options-product__item">
+                                    <div class="options-product__label">Гарда и тыльник</div>
+                                    <div class="options-product__value">
+                                        <select>
+                                            <option value="1">выбрать гарда и тыльник</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="body-product__actions actions-product">
+                                <div class="actions-product__price">3 865 Р</div>
+                                <div class="actions-product__row">
+                                    <div class="actions-product__quantity quantity">
+                                        <div class="quantity__input">
+                                            <input type="text">
+                                        </div>
+                                    </div>
+                                    <div class="actions-product__buttons">
+                                        <a class="actions-product__cart  button" href="#">В корзину</a>
+                                        <a class="actions-product__cart  button button_black" href="#">Купить в один клик</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="product__info">
+                    <p>Легкий удобный нож с клинком, имеющим пологие вогнутые линзовидные спуски на две трети ширины клинка, образующие тонкое, прекрасно режущее лезвие толщиной около 0,6 мм в районе подводов.
+                    </p>
+                    <p>
+                        Обух клинка со спинкой рукояти имеет одну плавную дугообразную линию. На пяте перед рукоятью есть подпальцевый вырез для точных работ.
+                    </p>
+                    <p>
+                        Необходимо проявлять некоторую осторожность при работе с большими боковыми нагрузками на лезвие ножа, ввиду небольшой толщины клинка в рабочей части.
+                    </p>
+                    <p>
+                        Монтаж рукояти накладной плашечный. На навершии рукояти, функцию которого выполняет выступающий из под плашек хвостовик, имеется отверстие под темляк. Этот нож удобный помощник при работе с продуктами и охоте на боровую и водоплавающую дичь.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock %}

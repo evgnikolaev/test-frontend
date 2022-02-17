@@ -1,3 +1,110 @@
 {
-	"title": "Главная"
+  "title": "Главная",
+  "hits_slider": {
+    "header": {
+      "title": "Хиты продаж",
+      "link": "Перейти в каталог"
+    },
+    "slides": [
+      {
+        "img": "/img/product-card/1.png",
+        "title": "Нож лиса",
+        "size": "95х18",
+        "materials": "Орех, Алюминий",
+        "reviews": "12 отзывов",
+        "price": "12 719 р.",
+        "cart": "В корзину"
+      },
+      {
+        "img": "/img/product-card/1.png",
+        "title": "Нож лиса",
+        "size": "95х18",
+        "materials": "Орех, Алюминий",
+        "reviews": "2 отзыва",
+        "price": "2 719 р.",
+        "cart": "В корзину"
+      },
+      {
+        "img": "/img/product-card/1.png",
+        "title": "Нож лиса",
+        "size": "95х18",
+        "materials": "Орех, Алюминий",
+        "reviews": "3 отзыва",
+        "price": "3 719 р.",
+        "cart": "В корзину"
+      },
+      {
+        "img": "/img/product-card/1.png",
+        "title": "Нож лиса",
+        "size": "95х18",
+        "materials": "Орех, Алюминий",
+        "reviews": "4 отзыва",
+        "price": "4 719 р.",
+        "cart": "В корзину"
+      },
+      {
+        "img": "/img/product-card/1.png",
+        "title": "Нож лиса",
+        "size": "95х18",
+        "materials": "Орех, Алюминий",
+        "reviews": "5 отзывов",
+        "price": "5 719 р.",
+        "cart": "В корзину"
+      }
+    ]
+  },
+  "new_slider": {
+    "header": {
+      "title": "Новинки",
+      "text": "Добро пожаловать на официальный сайт «ЗЛАТМАКС»! В нашем магазине представлен наиболее широкий выбор Златоустовских ножей от Златоустовских Оружейных Фабрик и компаний, мы являемся официальными поставщиками.",
+      "link": "Больше новинок"
+    },
+    "slides": [
+      {
+        "img": "/img/product-card/1.png",
+        "title": "Нож лиса",
+        "size": "95х18",
+        "materials": "Орех, Алюминий",
+        "reviews": "12 отзывов",
+        "price": "12 719 р.",
+        "cart": "В корзину"
+      },
+      {
+        "img": "/img/product-card/1.png",
+        "title": "Нож лиса",
+        "size": "95х18",
+        "materials": "Орех, Алюминий",
+        "reviews": "2 отзыва",
+        "price": "2 719 р.",
+        "cart": "В корзину"
+      },
+      {
+        "img": "/img/product-card/1.png",
+        "title": "Нож лиса",
+        "size": "95х18",
+        "materials": "Орех, Алюминий",
+        "reviews": "3 отзыва",
+        "price": "3 719 р.",
+        "cart": "В корзину"
+      },
+      {
+        "img": "/img/product-card/1.png",
+        "title": "Нож лиса",
+        "size": "95х18",
+        "materials": "Орех, Алюминий",
+        "reviews": "4 отзыва",
+        "price": "4 719 р.",
+        "cart": "В корзину"
+      },
+      {
+        "img": "/img/product-card/1.png",
+        "title": "Нож лиса",
+        "size": "95х18",
+        "materials": "Орех, Алюминий",
+        "reviews": "5 отзывов",
+        "price": "5 719 р.",
+        "cart": "В корзину"
+      }
+    ]
+  }
 }

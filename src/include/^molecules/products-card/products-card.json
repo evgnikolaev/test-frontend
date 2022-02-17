@@ -1,0 +1,11 @@
+{
+  "card": {
+    "img": "/img/product-card/1.png",
+    "title": "Нож лиса",
+    "size": "95х18",
+    "materials": "Орех, Алюминий",
+    "reviews": "12 отзывов",
+    "price": "2 719 р.",
+    "cart": "В корзину"
+  }
+}
