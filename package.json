@@ -79,6 +79,6 @@
 		"dev": "node --max-old-space-size=8192 node_modules/cross-env/src/bin/cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js"
 	},
 	"keywords": [],
-	"author": "Uplab Dev",
+	"author": "Dev",
 	"license": "ISC"
 }
