@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"homepage": "https://evgnikolaev.github.io/test-frontend",
+	"homepage": "https://evgnikolaev.github.io/",
 	"browserslist": [
 		"last 3 versions",
 		"> 1%"
